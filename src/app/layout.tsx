@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { dmSans } from "@/assets/fonts/font";
 import "./globals.css";
+import ReduxProvider from "@/store/provider";
 
 export const metadata: Metadata = {
   title: "Toneop Eats CRM",
@@ -15,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={dmSans.variable}>
       <body className={`antialiased`}>
-        {children}
-        <p>maiin</p>
+        <ReduxProvider>
+          {children}
+          <p>maiin</p>
+        </ReduxProvider>
       </body>
     </html>
   );
