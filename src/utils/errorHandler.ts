@@ -26,11 +26,11 @@ export interface ErrorLog {
 /**
  * Log an error to the console and potentially to an error monitoring service
  */
-export function logError(
+export const logError = (
   error: Error | unknown,
   type: ErrorType = ErrorType.UNKNOWN,
   context: Record<string, unknown> = {}
-): ErrorLog {
+): ErrorLog => {
   const errorObject = error instanceof Error ? error : new Error(String(error));
 
   const errorLog: ErrorLog = {
@@ -51,12 +51,12 @@ export function logError(
   // Example: Sentry.captureException(errorObject, { extra: context });
 
   return errorLog;
-}
+};
 
 /**
  * Handle API errors and return a user-friendly message
  */
-export function handleApiError(error: unknown): string {
+export const handleApiError = (error: unknown): string => {
   // Log the error
   logError(error, ErrorType.API);
 
@@ -74,14 +74,14 @@ export function handleApiError(error: unknown): string {
 
   // Default message
   return "An error occurred while processing your request. Please try again later.";
-}
+};
 
 /**
  * Format validation errors for display
  */
-export function formatValidationErrors(
+export const formatValidationErrors = (
   errors: Record<string, string[]>
-): Record<string, string> {
+): Record<string, string> => {
   const formattedErrors: Record<string, string> = {};
 
   Object.entries(errors).forEach(([field, messages]) => {
@@ -89,7 +89,7 @@ export function formatValidationErrors(
   });
 
   return formattedErrors;
-}
+};
 
 /**
  * Create a custom error with additional context

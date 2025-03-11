@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { Container, Text, Button } from "@/components/common";
 
 interface ErrorBoundaryProps {
   children: React.ReactNode;
@@ -10,12 +11,12 @@ interface ErrorBoundaryProps {
   resetKey?: string | number | boolean | null | undefined;
 }
 
-export default function ErrorBoundary({
+const ErrorBoundary = ({
   children,
   fallback,
   onError,
   resetKey,
-}: ErrorBoundaryProps) {
+}: ErrorBoundaryProps) => {
   const [error, setError] = useState<Error | null>(null);
   const pathname = usePathname();
 
@@ -27,28 +28,48 @@ export default function ErrorBoundary({
   if (error) {
     return (
       fallback || (
-        <div className="p-4 border border-red-300 bg-red-50 rounded-md">
-          <h3 className="text-lg font-medium text-red-800 mb-2">
+        <Container
+          padding="md"
+          bgColor="bg-red-50"
+          rounded="md"
+          border
+          borderColor="border-red-300"
+          className="mb-4"
+        >
+          <Text
+            variant="h3"
+            weight="medium"
+            color="text-red-800"
+            className="mb-2"
+          >
             Something went wrong in this section
-          </h3>
-          <p className="text-sm text-red-600 mb-4">
+          </Text>
+          <Text variant="p" size="sm" color="text-red-600" className="mb-4">
             This section encountered an error. The rest of the page should still
             work.
-          </p>
+          </Text>
           {process.env.NODE_ENV === "development" && (
-            <div className="bg-white p-3 rounded border border-red-200 mb-3">
-              <p className="text-xs font-mono text-red-800 overflow-auto">
+            <Container
+              padding="md"
+              bgColor="bg-white"
+              rounded="md"
+              border
+              borderColor="border-red-200"
+              className="mb-3"
+            >
+              <Text
+                variant="p"
+                size="xs"
+                className="font-mono text-red-800 overflow-auto"
+              >
                 {error.message}
-              </p>
-            </div>
+              </Text>
+            </Container>
           )}
-          <button
-            onClick={() => setError(null)}
-            className="px-3 py-1 bg-red-600 text-white text-sm rounded hover:bg-red-700 transition-colors"
-          >
+          <Button onClick={() => setError(null)} variant="danger" size="sm">
             Try Again
-          </button>
-        </div>
+          </Button>
+        </Container>
       )
     );
   }
@@ -63,7 +84,9 @@ export default function ErrorBoundary({
       {children}
     </ErrorBoundaryInternal>
   );
-}
+};
+
+export default ErrorBoundary;
 
 class ErrorBoundaryInternal extends React.Component<{
   children: React.ReactNode;

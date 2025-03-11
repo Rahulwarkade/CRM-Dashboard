@@ -7,10 +7,10 @@ interface FetchOptions extends RequestInit {
 /**
  * Enhanced fetch with timeout and error handling
  */
-export async function fetchWithErrorHandling<T>(
+export const fetchWithErrorHandling = async <T>(
   url: string,
   options: FetchOptions = {}
-): Promise<T> {
+): Promise<T> => {
   const { timeout = 30000, ...fetchOptions } = options;
 
   // Create an AbortController for timeout handling
@@ -75,7 +75,7 @@ export async function fetchWithErrorHandling<T>(
       { url }
     );
   }
-}
+};
 
 /**
  * GET request with error handling

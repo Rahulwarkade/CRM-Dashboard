@@ -8,7 +8,7 @@ interface ReduxProviderProps {
   children: React.ReactNode;
 }
 
-export function ReduxProvider({ children }: ReduxProviderProps) {
+export const ReduxProvider = ({ children }: ReduxProviderProps) => {
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
@@ -28,6 +28,6 @@ export function ReduxProvider({ children }: ReduxProviderProps) {
   }, []);
 
   return <Provider store={store}>{isReady ? children : null}</Provider>;
-}
+};
 
 export default ReduxProvider;

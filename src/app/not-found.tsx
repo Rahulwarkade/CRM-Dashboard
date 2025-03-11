@@ -1,11 +1,16 @@
 import React from "react";
+import { Container, Text } from "@/components/common";
 
 const NotFound = () => {
   return (
-    <div>
-      <h2>Page Not Found</h2>
-      <p>Could Not Find Requested Resource</p>
-    </div>
+    <Container padding="md" maxWidth="md" centered>
+      <Text variant="h2" weight="semibold">
+        Page Not Found
+      </Text>
+      <Text variant="p" color="text-gray-600">
+        Could Not Find Requested Resource
+      </Text>
+    </Container>
   );
 };
 

@@ -1,13 +1,23 @@
-"use client";
-
 import React from "react";
-import ApiDemo from "@/components/ApiDemo";
+import { ApiDemo } from "@/components";
+import { Container, Text } from "@/components/common";
 
-export default function DemoPage() {
+const DemoPage = () => {
   return (
-    <div className="container mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-6">API Demo Page</h1>
+    <Container
+      maxWidth="xl"
+      padding="lg"
+      bgColor="bg-white"
+      rounded="lg"
+      shadow="md"
+      border
+    >
+      <Text variant="h1" weight="bold" className="mb-6">
+        API Demo Page
+      </Text>
       <ApiDemo />
-    </div>
+    </Container>
   );
-}
+};
+
+export default DemoPage;
