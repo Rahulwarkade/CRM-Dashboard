@@ -8,7 +8,7 @@ const SignUp : React.FC = ()=>{
                 {/* Image Container */}
 
                 <Container className="w-full relative">
-                    <Image
+                    signup
                 </Container>
             </section>
         </>
