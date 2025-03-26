@@ -55,7 +55,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     };
 
     const inputClasses = twMerge(
-      "w-full rounded-md  transition-colors",
+      "w-full transition-colors",
       getVariantClasses(),
       getSizeClasses(),
       leftIcon ? "pl-10" : "",

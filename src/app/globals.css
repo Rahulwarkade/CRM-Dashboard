@@ -13,23 +13,12 @@ body {
 
 @theme {
   --color-gray_787878: #787878;
-  --color-gray_414141: #414141;
-  --color-black_000000: #000000;
-  --color-red_e52c42: #e52c42;
-  --color-yellow_d8b500: #d8b500;
-  --color-green_36ce00: #36ce00;
-  --color-white_ffffff: #ffffff;
-  --color-blue_3e91ff: #3e91ff;
-  --color-blue_eef7ff: #eef7ff;
-  --color-blue_d9ecff: #d9ecff;
-  --color-blue_bcdeff: #bcdeff;
-  --color-blue_8ecbff: #8ecbff;
-  --color-blue_59acff: #59acff;
-  --color-blue_1b6af5: #1b6af5;
-  --color-blue_1454e1: #1454e1;
-  --color-blue_1744b6: #1744b6;
-  --color-blue_193d8f: #193d8f;
-
+  --color-gray_79747E : #79747E;
+  --color-black_313131 : #313131;
+  --color-black_1C1B1F : #1C1B1F;
+  --color-blue_fffff2 : #515DEF;
+  --color-blue_primary : #515DEF;
+  --color-red_ff8682 : #FF8682;
   --text-fs-16: 1rem;
   --text-fs-20: 1.25rem;
   --text-fs-24: 1.5rem;
