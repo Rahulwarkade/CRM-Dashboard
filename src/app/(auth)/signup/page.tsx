@@ -1,14 +1,15 @@
 import React from "react";
+import {SignUp } from "@/components";
 import { Container} from "@/components/common";
 
-const Login = () => {
+const Page = () => {
   return (
     <Container
-    className="w-full h-[400px] bg-teal-300"
+    className="w-full "
     >
-    login
+    <SignUp/>
     </Container>
   );
 };
 
-export default Login;
+export default Page;

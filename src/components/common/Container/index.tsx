@@ -19,16 +19,16 @@ interface ContainerProps {
 const Container: React.FC<ContainerProps> = ({
   children,
   className = "",
-  maxWidth = "lg",
-  padding = "md",
-  centered = true,
+  maxWidth,
+  padding,
+  centered = false,
   fluid = false,
   as: Component = "div",
   bgColor = "",
   rounded = "none",
   shadow = "none",
   border = false,
-  borderColor = "border-gray-200",
+  borderColor,
   ...props
 }) => {
   const getMaxWidthClass = () => {
@@ -52,7 +52,7 @@ const Container: React.FC<ContainerProps> = ({
       case "none":
         return "";
       default:
-        return "max-w-lg";
+        return "w-full";
     }
   };
 
@@ -69,7 +69,7 @@ const Container: React.FC<ContainerProps> = ({
       case "xl":
         return "px-8 py-6";
       default:
-        return "px-4 py-3";
+        return "";
     }
   };
 

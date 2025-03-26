@@ -25,8 +25,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
       leftIcon,
       rightIcon,
       variant = "default",
-      inputSize = "md",
+      inputSize ,
       disabled,
+      type="text",
       ...props
     },
     ref
@@ -38,7 +39,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         case "filled":
           return "border border-transparent bg-gray-100 focus:bg-transparent focus:border-blue-500";
         default:
-          return "border border-gray-300 bg-white focus:border-blue-500";
+          return "";
       }
     };
 
@@ -54,7 +55,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     };
 
     const inputClasses = twMerge(
-      "w-full rounded-md outline-none transition-colors",
+      "w-full rounded-md  transition-colors",
       getVariantClasses(),
       getSizeClasses(),
       leftIcon ? "pl-10" : "",
@@ -79,14 +80,15 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
         )}
         <div className="relative">
           {leftIcon && (
-            <div className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+            <span className="absolute right-6 top-1/2 -translate-y-1/2 text-gray-400">
               {leftIcon}
-            </div>
+            </span>
           )}
           <input
             ref={ref}
             className={inputClasses}
             disabled={disabled}
+            type={type}
             {...props}
           />
           {rightIcon && (
