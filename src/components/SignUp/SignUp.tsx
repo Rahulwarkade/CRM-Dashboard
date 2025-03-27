@@ -77,51 +77,52 @@ const SignUp: React.FC = () => {
     try {
       // Example Usage
       //   setShowOtp(true);
+      reset();
     } catch (error) {
       console.log(error);
     }
   };
   return (
     <>
-      <section className="w-full h-full relative flex p-[4%] md:px-[7%] md:py-[4%]">
+      <section className="w-full relative md:grid grid-cols-5 gap-x-[100px] p-[4%] md:px-[7%] md:py-[4%] ">
         {/* Image Container */}
 
-        <Container className="w-fit relative">
-          <Image src={signupIndicator} width={486} height={816} alt="signup" />
+        <Container className="hidden max-md:h-[300px] md:grid w-full relative col-span-2">
+          <Image src={signupIndicator.src} fill alt="signup" className="object-contain"/>
         </Container>
 
         {/* Sign Up Container and Logo*/}
 
-        <Container className="w-full relative">
+        <Container className="w-full relative col-span-3 flex flex-col">
           {/* Logo */}
-          <Container className="w-full relative text-right">
+          <Container className="w-full relative text-center md:text-right mb-[40px]">
             your logo
           </Container>
 
-          {/* Sign Up Container */}
-          <Container className="w-full relative">
-            <Text
-              variant="h1"
-              className="text-xl md:text-4xl 2xl:text-[40px] font-semibold text-black_313131"
-            >
-              Sign up
-            </Text>
-            <Text className="text-sm md:text-base  text-black_313131">
-              Let{"'"}s get you all st up so you can access your personal
-              account.
-            </Text>
-          </Container>
 
           {/* Signup Form Container */}
-          <Container className="w-full relative ">
-            <form className="w-full" onSubmit={handleSubmit(handleFormSubmit)}>
-              <Container className="w-full  max-w-[640px] flex flex-col gap-[40px]">
+          <Container className="w-full h-full relative  flex flex-col justify-center items-center ">
+            {/* Sign Up Container */}
+            <Container className="w-full relative">
+              <Text
+                variant="h1"
+                className="text-xl md:text-4xl 2xl:text-[40px] font-semibold text-black_313131 text-center md:text-start"
+              >
+                Sign up
+              </Text>
+              <Text className="text-sm md:text-base  text-black_313131 text-center md:text-start">
+                Let{"'"}s get you all st up so you can access your personal
+                account.
+              </Text>
+            </Container>
+            <form className="w-full " onSubmit={handleSubmit(handleFormSubmit)}>
+              <Container className="w-full  flex flex-col gap-[40px]">
                 <Container className="w-full relative flex flex-col gap-6">
                 {/* Name Input Container */}
                   <Input
                     placeholder="e.g. johndoe"
                     containerClassName="w-full relative h-[56px] before:content-['Username'] before:w-fit before:bg-white before:z-10 before:translate-y-[60%] before:translate-x-4 before:text-sm before:text-black_1C1B1F "
-                    className={`w-full h-full border border-gray_79747E rounded-[4px] p-4 before:bg-white outline-blue_515def ${
+                    className={`w-full h-full border border-gray_79747E rounded-[4px] p-4 before:bg-white outline-blue_515def placeholder:text-xs md:placeholder:text-base ${
                       errors.name ? "outline-red-500" : "outline-blue_515def"
                     }`}
                     {...register("name", {
@@ -189,7 +190,7 @@ const SignUp: React.FC = () => {
                     <Input
                       placeholder="e.g. +91 98765 43210"
                       containerClassName="w-full relative h-[56px] before:content-['Password'] before:w-fit before:bg-white before:z-10 before:translate-y-[60%] before:translate-x-4 before:text-sm before:text-black_1C1B1F "
-                      className={`w-full h-full border border-gray_79747E rounded-[4px] p-4 before:bg-white outline-blue_515def ${
+                      className={`w-full h-full border border-gray_79747E rounded-[4px] p-4 before:bg-white outline-blue_515def placeholder:text-xs md:placeholder:text-base ${
                         errors.password
                           ? "outline-red-500"
                           : "outline-blue_515def"
@@ -197,7 +198,7 @@ const SignUp: React.FC = () => {
                       rightIcon={
                         <span
                           onClick={togglePasswordVisibility}
-                          className="flex"
+                          className="flex max-md:size-[12px]"
                         >
                           <Image
                             src={Icons.View}
@@ -222,7 +223,8 @@ const SignUp: React.FC = () => {
                     <Input
                       placeholder="e.g. +91 98765 43210"
                       containerClassName="w-full relative h-[56px] before:content-['Password'] before:w-fit before:bg-white before:z-10 before:translate-y-[60%] before:translate-x-4 before:text-sm before:text-black_1C1B1F "
-                      className={`w-full h-full border border-gray_79747E rounded-[4px] p-4 before:bg-white outline-blue_515def ${
+                      className={`w-full h-full border border-gray_79747E rounded-[4px] p-4 before:bg-white outline-blue_515def 
+                        placeholder:text-xs md:placeholder:text-base ${
                         errors.password
                           ? "outline-red-500"
                           : "outline-blue_515def"
@@ -230,7 +232,7 @@ const SignUp: React.FC = () => {
                       rightIcon={
                         <span
                           onClick={togglePasswordVisibility}
-                          className="flex"
+                          className="flex max-md:size-[12px]"
                         >
                           <Image
                             src={Icons.View}
@@ -254,7 +256,7 @@ const SignUp: React.FC = () => {
                     />
                   </Container>
                   {/* Terms and Privacy Policy Container */}
-                  <Container className="w-full relative flex">
+                  <Container className="w-full relative flex gap-2 mt-3 md:mt-6">
                     <span className="w-[18px] h-[18px] rounded-sm border border-black_313131"></span>
                     <Text className="text-sm text-black_313131 font-medium">
                       I agree to all the
@@ -269,6 +271,8 @@ const SignUp: React.FC = () => {
                   </Container>
 
                 </Container>
+
+                {/* Account Button */}
                 <Container
                   className="w-full flex flex-col gap-4"
                 >

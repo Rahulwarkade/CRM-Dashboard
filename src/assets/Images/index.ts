@@ -1,5 +1,12 @@
 import  signupIndicator  from  "./SignUp.webp";
-
+import Logo from "./Logo.svg"
+import Pic from "./pic.png"
+import PetalBg from "./PetalBg.webp";
+import NewYearParty from "./NewYearParty.svg";
 export {
-    signupIndicator 
+    Logo,
+    Pic,
+    PetalBg,
+    NewYearParty,
+    signupIndicator
 }
