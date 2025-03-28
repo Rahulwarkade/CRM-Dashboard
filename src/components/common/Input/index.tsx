@@ -66,7 +66,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     );
 
     return (
-      <div className={`flex flex-col space-y-1 ${containerClassName}`}>
+      <div className={`${containerClassName}`}>
         {label && (
           <label
             className={twMerge(
@@ -78,9 +78,9 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
             {label}
           </label>
         )}
-        <div className="relative">
+        <div className="w-full relative">
           {leftIcon && (
-            <span className="absolute right-6 top-1/2 -translate-y-1/2 text-gray-400">
+            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
               {leftIcon}
             </span>
           )}

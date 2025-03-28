@@ -10,5 +10,10 @@ export { default as DeashboardLayout } from "./DashboardLayout/DashboardLayout";
 export { default as DashboardContent } from "./DashboardContent/DashboardContent";
 export { default as FeedContent } from "./FeedContent/FeedContent";
 export { default as JobPost } from "./Post/JobPost";
+export { default as MyConnection } from "./MyConnection/MyConnection";
+export { default as ChatWindow } from "./ChatWindow/ChatWindow";
+export { default as Chat } from "./Chat/Chat";
+export { default as NotificationWindow } from "./NotificationWindow/NotificationWindow";
+export { default as ProfileWindow } from "./ProfileWindow/ProfileWindow";
 // Re-export common components
 export * from "./common";
