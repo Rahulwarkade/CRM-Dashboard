@@ -132,7 +132,66 @@ const Login = () => {
                       className="w-full px-[18px] pt-[21px] pb-[70px] relative rounded-[6px] border border-[#DEDEDE] outline-none"
                       />
                 </Container>
+{/************************************************************Change Password*****************************************  */}
+          {/* Change Password Window */}
+        <Container className="w-full h-full relative p-[30px] flex flex-col gap-[30px]">
 
+          {/* Change Password Heading */}
+          <Container className="w-full relative">
+            <Text className="text-base md:text-2xl font-medium text-black">
+            Password Reset
+            </Text>
+            <Text className="text-sm md:text-xl text-[#787774]">
+            Update your password here. Enter your current and new password.
+            </Text>
+          </Container>
+
+          {/* Information Form Container */}
+          <Container className="w-full relative">
+              <form className="w-full relative flex flex-col  gap-4">
+              {/* Name, Number and Email Input */}
+                <Container className="w-full relative flex flex-col gap-6">
+                  {/* Name, Number and Email Input */}
+                  <Container className="w-full relative flex  gap-4">
+                      <Input 
+                      label="Current Password"
+                      labelClassName="text-[#747B85] text-sm md:text-base font-normal text-nowrap pl-[6px]"
+                      placeholder="password"
+                      containerClassName = "w-full  flex flex-col relative overflow-hidden "
+                      className="w-full h-[60px] relative rounded-[6px] border border-[#DEDEDE] outline-none"
+                      type="password"
+                      />
+                      <Input 
+                      label="New Password"
+                      labelClassName="text-[#747B85] text-sm md:text-base font-normal text-nowrap pl-[6px]"
+                      placeholder="password"
+                      containerClassName = "w-full  flex flex-col relative overflow-hidden "
+                      className="w-full h-[60px] relative rounded-[6px] border border-[#DEDEDE] outline-none"
+                      type="password"
+                      />
+                      <Input 
+                      label="Confirm Password"
+                      labelClassName="text-[#747B85] text-sm md:text-base font-normal text-nowrap pl-[6px]"
+                      placeholder="John Doe"
+                      containerClassName = "w-full  flex flex-col relative overflow-hidden "
+                      className="w-full h-[60px] relative rounded-[6px] border border-[#DEDEDE] outline-none"
+                      />
+                  </Container>
+
+                {/* Update Button */}
+                <Container className="w-full relative flex gap-3 items-center justify-end px-6">
+
+                  {/* Update */}
+                  <Button className="px-6 py-[10px] rounded-[4px] border border-[#515DEF] text-white bg-[#515DEF] text-sm md:text-base font-medium"> Update Password </Button>
+
+                </Container>
+              </Container>
+              </form>
+          </Container>
+
+        </Container>
+{/************************************************************Change Password*****************************************  */}
+                
                 {/* Cancle and Update Button */}
                 <Container className="w-full relative flex gap-3 items-center justify-end px-6">
 
