@@ -21,8 +21,22 @@ import StepUp from "./step-up.svg";
 import Verification from "./verification.svg";
 import View from "./view.svg";
 import WhatsApp from "./whatsapp.svg";
+import Upload from "./upload.svg";
+import Boy from "./Boy.svg";
+import Woman from "./Woman.svg";
+import CheckCircle1 from "./CheckCircle1.svg";
+import CheckCircle2 from "./CheckCircle2.svg";
+import ProIcon from "./ProIcon.svg";
+import EnterpriseIcon from "./EnterpriseIcon.svg";
 
 export const Icons = {
+  CheckCircle1,
+  CheckCircle2,
+  ProIcon,
+  EnterpriseIcon,
+  Upload,
+  Boy,
+  Woman,
   Add,
   Assign,
   Back,

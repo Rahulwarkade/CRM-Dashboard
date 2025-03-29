@@ -17,7 +17,7 @@ const Text: React.FC<TextProps> = ({
   children,
   variant = "p",
   className = "",
-  color = "text-gray-900",
+  color,
   weight = "normal",
   size,
   align = "left",
